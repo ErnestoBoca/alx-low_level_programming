@@ -3,6 +3,7 @@
 /**
  *puts_half -  prints half of a string, followed by a new line.
  *prints the second half of the string
+ *@str: pointer to the string that will br printed
  *Return: nothing
  */
 void puts_half(char *str)
