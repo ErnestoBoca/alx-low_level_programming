@@ -12,7 +12,7 @@ int main(int args, char *argv[])
 
 	sum = 0;
 	if (args == 1)
-		printf("0\n");
+		printf("%d\n", 0);
 	else
 	{
 		for (i = 1; i < args; i++)
