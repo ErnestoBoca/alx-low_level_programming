@@ -20,21 +20,26 @@ int main(int args, char *argv[])
 	else
 	{
 		amount = atoi(argv[1]);
-		while (amount != 0)
+		if (amount < 0)
+			printf("0\n");
+		else
 		{
-			if (amount >= 25)
-				amount -= 25;
-			else if (amount >= 10)
-				amount -= 10;
-			else if (amount >= 5)
-				amount -= 5;
-			else if (amount >= 2)
-				amount -= 2;
-			else
-				amount -= 1;
-			count_c++;
+			while (amount != 0)
+			{
+				if (amount >= 25)
+					amount -= 25;
+				else if (amount >= 10)
+					amount -= 10;
+				else if (amount >= 5)
+					amount -= 5;
+				else if (amount >= 2)
+					amount -= 2;
+				else
+					amount -= 1;
+				count_c++;
+			}
+			printf("%d\n", count_c);
 		}
-		printf("%d\n", count_c);
 		return (0);
 	}
 }
