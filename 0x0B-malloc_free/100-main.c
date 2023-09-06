@@ -11,6 +11,8 @@ int main(int ac, char *av[])
 {
     char *s;
 
+    (void)ac;
+    (void)av;
     s = argstostr(ac, av);
     if (s == NULL)
     {
