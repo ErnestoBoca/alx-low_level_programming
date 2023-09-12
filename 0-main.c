@@ -1,7 +1,5 @@
-#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
+#include "dog.h"
 
 /**
  * main - check the code
@@ -10,22 +8,11 @@
  */
 int main(void)
 {
-    char *c;
-    int *i;
-    float *f;
-    double *d;
+    struct dog my_dog;
 
-    c = malloc_checked(sizeof(char) * 1024);
-    printf("%p\n", (void *)c);
-    i = malloc_checked(sizeof(int) * 402);
-    printf("%p\n", (void *)i);
-    f = malloc_checked(sizeof(float) * 1000000);
-    printf("%p\n", (void *)f);
-    d = malloc_checked(INT_MAX);
-    printf("%p\n", (void *)d);
-    free(c);
-    free(i);
-    free(f);
-    free(d);
+    my_dog.name = "Poppy";
+    my_dog.age = 3.5;
+    my_dog.owner = "Bob";
+    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
     return (0);
 }
