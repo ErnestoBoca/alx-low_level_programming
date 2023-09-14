@@ -11,6 +11,9 @@ void print_all(const char * const format, ...)
 	int i;
 	char c, *str;
 
+	if (format == NULL)
+		return; 
+
 	i = 0;
 	c = format[i];
 	va_start(args, format);
