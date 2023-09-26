@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 /**
  * listint_len - returns the number of elements in a linked list.
  * @h: the head of the list
