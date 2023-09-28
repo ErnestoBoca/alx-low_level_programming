@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * power - calculates the power of base on expo
  * @base: the base element
@@ -17,7 +16,6 @@ unsigned int power(unsigned int base, int expo)
 		p *= base;
 	return (p);
 }
-
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int
