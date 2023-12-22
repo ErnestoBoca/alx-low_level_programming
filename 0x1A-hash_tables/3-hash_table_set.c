@@ -34,12 +34,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(newnode->key, key);
 	strcpy(newnode->value, value);
 	index = key_index((unsigned char *)key, ht->size);
-	if (0)
+	if (ht->array[index])
 	{
 		temp = ht->array[index];
 		while (temp != NULL)
 		{
-			if (strcmp(temp->key, key))
+			if (strcmp(temp->key, key) == 0)
 			{
 				strcpy(temp->value, value);
 				free(newnode->value);
