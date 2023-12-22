@@ -1,5 +1,33 @@
 #include "hash_tables.h"
 /**
+ * create_new_node - creates a new hash node
+ * Return: on success the new node created
+ * Returns NULL if fails
+ */
+hash_node_t *create_new_node()
+{
+	hash_node_t *newnode;
+
+	newnode = malloc(sizeof(hash_node_t));
+	if (newnode == NULL)
+		return (NULL);
+	newnode->key = malloc(sizeof(char *));
+	if (newnode->key == NULL)
+	{
+		free(newnode);
+		return (NULL);
+	}
+	newnode->value = malloc(sizeof(char *));
+	if (newnode->value == NULL)
+	{
+		free(newnode->key);
+		free(newnode);
+		return (NULL);
+	}
+	return (newnode);
+}
+
+/**
  * hash_table_set - adds an element to the hash table.
  * @ht: is the hash table
  * @key: key is the key. key can not be an empty string
@@ -15,22 +43,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || strcmp(key, "") == 0)
 		return (0);
-	newnode = malloc(sizeof(hash_node_t));
+	newnode = create_new_node();
 	if (newnode == NULL)
 		return (0);
-	newnode->key = malloc(sizeof(char *));
-	if (newnode->key == NULL)
-	{
-		free(newnode);
-		return (0);
-	}
-	newnode->value = malloc(sizeof(char *));
-	if (newnode->value == NULL)
-	{
-		free(newnode->key);
-		free(newnode);
-		return (0);
-	}
+
 	strcpy(newnode->key, key);
 	strcpy(newnode->value, value);
 	index = key_index((unsigned char *)key, ht->size);
