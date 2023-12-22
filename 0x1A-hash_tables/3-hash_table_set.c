@@ -20,10 +20,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	newnode->key = malloc(sizeof(char *));
 	if (newnode->key == NULL)
+	{
+		free(newnode);
 		return (0);
+	}
 	newnode->value = malloc(sizeof(char *));
 	if (newnode->value == NULL)
+	{
+		free(newnode->key);
+		free(newnode);
 		return (0);
+	}
 	strcpy(newnode->key, key);
 	strcpy(newnode->value, value);
 	index = key_index((unsigned char *)key, ht->size);
