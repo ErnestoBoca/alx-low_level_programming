@@ -17,19 +17,7 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (ht->array[i] != NULL)
 		{
-			if (first)
-			{
-				printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
-				first = 0;
-			} else
-				printf(", '%s': '%s'", ht->array[i]->key, ht->array[i]->value);
-		}
-        }
-	for (i = 0; i < ht->size; i++)
-	{
-		if (ht->array[i] != NULL)
-		{
-			temp = ht->array[i]->next;
+			temp = ht->array[i];
 			while (temp != NULL)
 			{
 				if (first)
