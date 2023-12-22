@@ -34,7 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(newnode->key, key);
 	strcpy(newnode->value, value);
 	index = key_index((unsigned char *)key, ht->size);
-	if (ht->array[index] != NULL)
+	if (0)
 	{
 		temp = ht->array[index];
 		while (temp != NULL)
