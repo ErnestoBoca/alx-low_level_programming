@@ -1,12 +1,13 @@
 #include "search_algos.h"
 
 /**
- * print_indexes - prints the indexes from start to end
+ * print_array - prints the elemnts of array from start to end
+ * @array: the array in case
  * @start: the first index
  * @end: the last index
  * Return: nothing
  */
-void print_indexes(size_t start, size_t end)
+void print_array(int *array, size_t start, size_t end)
 {
 	size_t i;
 
@@ -14,9 +15,9 @@ void print_indexes(size_t start, size_t end)
 	for (i = start; i <= end; i++)
 	{
 		if (i == start)
-			printf("%lu", i);
+			printf("%d", array[i]);
 		else
-			printf(", %lu", i);
+			printf(", %d", array[i]);
 	}
 	printf("\n");
 }
@@ -37,7 +38,7 @@ int binary_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	print_indexes(left, right);
+	print_array(array, left, right);
 	while (left < right)
 	{
 		mean = (left + right) / 2;
@@ -48,7 +49,7 @@ int binary_search(int *array, size_t size, int value)
 		else
 			left = mean + 1;
 
-		 print_indexes(left, right);
+		 print_array(array, left, right);
 
 	}
 
